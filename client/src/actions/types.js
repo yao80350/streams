@@ -1,1 +1,7 @@
 export const AUTH_STATUS = 'AUTH_STATUS';
+export const FETCH_STREAMS = 'FETCH_STREAMS';
+export const FETCH_STREAM = 'FETCH_STREAM';
+export const CARETE_STREAM = 'CARETE_STREAM';
+export const EDIT_STREAM = 'EDIT_STREAM';
+export const DELECT_STREAM = 'DELECT_STREAM';
+
