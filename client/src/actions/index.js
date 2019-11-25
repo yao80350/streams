@@ -2,7 +2,7 @@ import {
     AUTH_STATUS,
     FETCH_STREAMS,
     FETCH_STREAM,
-    CARETE_STREAM,
+    CREATE_STREAM,
     EDIT_STREAM,
     DELECT_STREAM 
 } from './types';
@@ -26,16 +26,17 @@ const fetchStream = id => async dispatch => {
     dispatch({ type: FETCH_STREAM, payload: response.data });
 }
 
-const careteStream = formValues => async (dispatch, getState) => {
+const createStream = formValues => async (dispatch, getState) => {
     const { userId } = getState().auth;
     const response = await stream.post('/streams', {...formValues, userId});
-    dispatch({ type: CARETE_STREAM, payload: response.data });
+    dispatch({ type: CREATE_STREAM, payload: response.data });
     history.push('/');
 }
 
 const editStream = (formValues, id) => async dispatch => {
-    const response = await stream.put(`/streams/${id}`, formValues);
+    const response = await stream.patch(`/streams/${id}`, formValues);
     dispatch({ type: EDIT_STREAM, payload: response.data });
+    history.push('/');
 }
 
 const delectStream = id => async dispatch => {
@@ -43,4 +44,4 @@ const delectStream = id => async dispatch => {
     dispatch({ type: DELECT_STREAM, payload: id });
 }
 
-export { fetchAuth, fetchStreams, fetchStream, careteStream, editStream, delectStream };
+export { fetchAuth, fetchStreams, fetchStream, createStream, editStream, delectStream };

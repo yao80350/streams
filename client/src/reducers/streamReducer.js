@@ -3,7 +3,7 @@ import _ from "loadsh";
 import { 
     FETCH_STREAMS,
     FETCH_STREAM,
-    CARETE_STREAM,
+    CREATE_STREAM,
     EDIT_STREAM,
     DELECT_STREAM 
 } from '../actions/types';
@@ -14,7 +14,7 @@ export default (state={}, action) => {
             return _.mapKeys(action.payload, 'id');
         case FETCH_STREAM:
             return {...state, [action.payload.id]: action.payload};
-        case CARETE_STREAM:
+        case CREATE_STREAM:
             return {...state, [action.payload.id]: action.payload}; 
         case EDIT_STREAM:
             return {...state, [action.payload.id]: action.payload};       
