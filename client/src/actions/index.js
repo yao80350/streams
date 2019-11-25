@@ -4,7 +4,7 @@ import {
     FETCH_STREAM,
     CREATE_STREAM,
     EDIT_STREAM,
-    DELECT_STREAM 
+    DELETE_STREAM 
 } from './types';
 import stream from '../apis/stream';
 import history from '../history';
@@ -39,9 +39,10 @@ const editStream = (formValues, id) => async dispatch => {
     history.push('/');
 }
 
-const delectStream = id => async dispatch => {
-    await stream.delect(`/streams/${id}`);
-    dispatch({ type: DELECT_STREAM, payload: id });
+const deleteStream = id => async dispatch => {
+    await stream.delete(`/streams/${id}`);
+    dispatch({ type: DELETE_STREAM, payload: id });
+    history.push('/');
 }
 
-export { fetchAuth, fetchStreams, fetchStream, createStream, editStream, delectStream };
+export { fetchAuth, fetchStreams, fetchStream, createStream, editStream, deleteStream };
