@@ -32,7 +32,7 @@ a {
 	text-decoration: none;
 	display: inline-block;
 
-	a:hover {
+	&:hover {
 		color: inherit;
 	}
 }
@@ -54,6 +54,10 @@ button {
 	&:focus {
 		outline: none;
 	}
+}
+
+video {
+	width: 100%;
 }
 
 .container {

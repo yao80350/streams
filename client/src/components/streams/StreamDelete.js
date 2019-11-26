@@ -29,7 +29,7 @@ class StreamDelect extends React.Component {
     render() {
         return (
             <Modal 
-                onClick={() => {history.push('/')}}
+                onDismiss={() => {history.push('/')}}
                 title="Delete Stream"
                 content={this.renderContent()}
                 actions={this.renderActions()}

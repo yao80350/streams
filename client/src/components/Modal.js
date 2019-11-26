@@ -5,7 +5,7 @@ const Modal = props => {
     return ReactDOM.createPortal(
         <div 
             className="ui dimmer modals visible active"
-            onClick={props.onClick}
+            onClick={props.onDismiss}
         >
             <div 
                 className="ui standard modal visible active"
